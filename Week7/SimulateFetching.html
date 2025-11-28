@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Simulated Server Fetch</title>
+<style>
+  body { font-family: Arial; padding: 20px; }
+  #output {
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    width: 300px;
+  }
+</style>
+</head>
+<body>
+
+<h2>Simulated Data Fetching (Promises + setTimeout)</h2>
+
+<button onclick="fetchData()">Fetch Data</button>
+
+<div id="output">Click the button to load data...</div>
+
+<script>
+// Simulating server request using Promise
+function fakeServerRequest() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        id: 101,
+        name: "Bhumika",
+        email: "bhumikaVadf.com",
+        status: "Active User"
+      });
+    }, 2500); // 2.5 seconds delay
+  });
+}
+
+function fetchData() {
+  const output = document.getElementById("output");
+  output.innerHTML = "<strong>Loading...</strong>";
+
+  fakeServerRequest().then(data => {
+    output.innerHTML = `
+      <h3>Server Response:</h3>
+      <p><strong>ID:</strong> ${data.id}</p>
+      <p><strong>Name:</strong> ${data.name}</p>
+      <p><strong>Email:</strong> ${data.email}</p>
+      <p><strong>Status:</strong> ${data.status}</p>
+    `;
+  });
+}
+</script>
+
+</body>
+</html>

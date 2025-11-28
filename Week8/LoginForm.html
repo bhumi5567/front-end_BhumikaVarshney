@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login Form with fadeIn/fadeOut</title>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style>
+  body { font-family: Arial; padding: 20px; background: #f3f3f3; }
+
+  #loginBox {
+    display: none;
+    width: 300px;
+    padding: 25px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  }
+
+  button {
+    padding: 10px 20px;
+    border: none;
+    background: #0d6efd;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  button:hover {
+    background: #024fc7;
+  }
+
+  .closeBtn {
+    background: #dc3545;
+  }
+  .closeBtn:hover {
+    background: #b52a36;
+  }
+</style>
+
+</head>
+<body>
+
+<h2>Login Form with fadeIn() & fadeOut()</h2>
+
+<button id="showLogin">Show Login</button>
+
+<div id="loginBox">
+  <h3>Login</h3>
+  <input type="text" placeholder="Username" style="width:100%; padding:10px; margin-bottom:10px;">
+  <input type="password" placeholder="Password" style="width:100%; padding:10px; margin-bottom:10px;">
+  <br>
+  <button class="closeBtn" id="closeLogin">Close</button>
+</div>
+
+<script>
+$("#showLogin").click(function() {
+  $("#loginBox").fadeIn(500);
+});
+
+$("#closeLogin").click(function() {
+  $("#loginBox").fadeOut(500);
+});
+</script>
+
+</body>
+</html>

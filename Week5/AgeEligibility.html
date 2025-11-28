@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Age Eligibility Checker</title>
+</head>
+<body>
+
+<script>
+let age = prompt("Enter your age:");
+
+// Using if-else
+if (age >= 18) {
+  alert("You are eligible! (Checked using if-else)");
+} else {
+  alert("You are NOT eligible. (Checked using if-else)");
+}
+
+// Using ternary operator
+let result = (age >= 18) ? "Eligible (Ternary)" : "Not Eligible (Ternary)";
+document.write("<h2>Result: " + result + "</h2>");
+</script>
+
+</body>
+</html>

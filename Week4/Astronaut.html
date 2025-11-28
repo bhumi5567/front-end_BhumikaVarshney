@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Astronaut & Rocket Animation</title>
+
+<style>
+  body {
+    margin: 0;
+    background: #000014;
+    overflow: hidden;
+    font-family: Arial;
+  }
+
+  .space {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* Floating Astronaut */
+  .astronaut {
+    position: absolute;
+    width: 180px;
+    bottom: 10%;
+    left: 15%;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-40px) rotate(8deg); }
+  }
+
+  /* Rocket taking off */
+  .rocket {
+    position: absolute;
+    width: 180px;
+    bottom: -30%;
+    right: 10%;
+    animation: launch 7s ease-in-out infinite;
+  }
+
+  @keyframes launch {
+    0% { bottom: -30%; }
+    100% { bottom: 120%; }
+  }
+
+  /* Stars */
+  .star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 2s infinite alternate;
+  }
+
+  @keyframes twinkle {
+    from { opacity: 0.1; }
+    to { opacity: 1; }
+  }
+</style>
+</head>
+<body>
+
+<div class="space">
+  <!-- Stars -->
+  <div class="star" style="top:20%; left:30%;"></div>
+  <div class="star" style="top:50%; left:10%; animation-delay:1s;"></div>
+  <div class="star" style="top:70%; left:60%; animation-delay:2s;"></div>
+
+  <!-- Images -->
+  <img src="https://i.ibb.co/Vt8qDqf/astronaut.png" class="astronaut" alt="Astronaut">
+  <img src="https://i.ibb.co/2ZcGS85/rocket.png" class="rocket" alt="Rocket">
+</div>
+
+</body>
+</html>

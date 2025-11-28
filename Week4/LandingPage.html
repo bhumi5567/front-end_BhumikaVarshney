@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap Landing Page</title>
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+<style>
+  .hero-carousel img {
+    height: 75vh;
+    object-fit: cover;
+  }
+  .footer {
+    background: #111;
+    color: white;
+    padding: 20px 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+  <div class="container">
+    <a class="navbar-brand" href="#">StartupX</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto gap-3">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Carousel -->
+<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner hero-carousel">
+    <div class="carousel-item active">
+      <img src="https://picsum.photos/1200/700?random=1" class="d-block w-100" alt="">
+    </div>
+    <div class="carousel-item">
+      <img src="https://picsum.photos/1200/700?random=2" class="d-block w-100" alt="">
+    </div>
+    <div class="carousel-item">
+      <img src="https://picsum.photos/1200/700?random=3" class="d-block w-100" alt="">
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+<!-- Services Section -->
+<section class="py-5">
+  <div class="container text-center">
+    <h2 class="mb-4">Our Services</h2>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card p-3 shadow">
+          <img src="https://picsum.photos/400/250?random=11" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Web Development</h5>
+            <p class="card-text">Build fast & modern web applications.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card p-3 shadow">
+          <img src="https://picsum.photos/400/250?random=12" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">UI/UX Design</h5>
+            <p class="card-text">Craft intuitive & beautiful user experiences.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card p-3 shadow">
+          <img src="https://picsum.photos/400/250?random=13" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Brand Strategy</h5>
+            <p class="card-text">Grow your brand with strategic planning.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer text-center">
+  <p>© 2025 StartupX • All Rights Reserved</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

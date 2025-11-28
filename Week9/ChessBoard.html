@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dynamic Chessboard</title>
+<style>
+  body { font-family: Arial; padding: 20px; }
+  #board {
+    display: grid;
+    grid-template-columns: repeat(8, 60px);
+    grid-template-rows: repeat(8, 60px);
+    border: 3px solid black;
+    width: fit-content;
+  }
+  .square {
+    width: 60px;
+    height: 60px;
+  }
+  .highlight {
+    outline: 3px solid yellow;
+  }
+</style>
+</head>
+<body>
+
+<h2>Chessboard </h2>
+<div id="board"></div>
+
+<script>
+const board = document.getElementById("board");
+
+// Create 8×8 board using loops
+for (let row = 0; row < 8; row++) {
+  for (let col = 0; col < 8; col++) {
+    const square = document.createElement("div");
+    square.classList.add("square");
+
+    // Color pattern
+    const isBlack = (row + col) % 2 === 1;
+    square.style.background = isBlack ? "#444" : "#eee";
+
+    // Click to highlight
+    square.addEventListener("click", () => {
+      document.querySelectorAll(".square").forEach(s => s.classList.remove("highlight"));
+      square.classList.add("highlight");
+    });
+
+    board.appendChild(square);
+  }
+}
+</script>
+
+</body>
+</html>

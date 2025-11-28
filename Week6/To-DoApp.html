@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>To-Do List App</title>
+<style>
+  body {
+    font-family: Arial;
+    margin: 20px;
+  }
+  #todo-container {
+    width: 350px;
+    margin-top: 20px;
+  }
+  .todo-item {
+    display: flex;
+    justify-content: space-between;
+    background: #f3f3f3;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+  button {
+    background: #dc3545;
+    color: white;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  button:hover {
+    background: #b52b38;
+  }
+</style>
+</head>
+<body>
+
+<h2>To-Do List App</h2>
+
+<input type="text" id="todo-input" placeholder="Enter a task..." />
+<button onclick="addTodo()">Add</button>
+
+<div id="todo-container"></div>
+
+<script>
+function addTodo() {
+  const input = document.getElementById("todo-input");
+  const taskText = input.value.trim();
+
+  if (taskText === "") {
+    alert("Please enter a task!");
+    return;
+  }
+
+  // Create elements
+  const todoItem = document.createElement("div");
+  todoItem.className = "todo-item";
+
+  const text = document.createElement("span");
+  text.textContent = taskText;
+
+  const deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "Done";
+
+  // Delete functionality
+  deleteBtn.addEventListener("click", () => {
+    todoItem.remove();
+  });
+
+  // Append elements
+  todoItem.appendChild(text);
+  todoItem.appendChild(deleteBtn);
+
+  document.getElementById("todo-container").appendChild(todoItem);
+
+  // Clear input
+  input.value = "";
+}
+</script>
+
+</body>
+</html>
+

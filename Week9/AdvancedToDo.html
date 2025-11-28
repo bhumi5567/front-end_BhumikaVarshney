@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Advanced To-Do List</title>
+<style>
+  body { font-family: Arial; padding: 20px; }
+  #todo-container { margin-top: 20px; width: 400px; }
+  .item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f3f3f3;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+  }
+  .item.completed span {
+    text-decoration: line-through;
+    color: gray;
+  }
+  button {
+    margin-left: 5px;
+    padding: 5px 8px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<h2>Advanced To-Do List</h2>
+
+<input type="text" id="taskInput" placeholder="Type a task..." />
+<button onclick="addTask()">Add</button>
+
+<div id="todo-container"></div>
+
+<script>
+function addTask() {
+  const input = document.getElementById("taskInput");
+  const text = input.value.trim();
+  if (!text) return alert("Enter a task!");
+
+  const container = document.getElementById("todo-container");
+
+  // Parent item
+  const item = document.createElement("div");
+  item.className = "item";
+
+  // Checkbox
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.addEventListener("change", () => {
+    item.classList.toggle("completed");
+  });
+
+  // Text
+  const span = document.createElement("span");
+  span.textContent = text;
+
+  // Buttons
+  const deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "Done";
+  deleteBtn.onclick = () => item.remove();
+
+  const upBtn = document.createElement("button");
+  upBtn.textContent = "↑";
+  upBtn.onclick = () => {
+    const prev = item.previousElementSibling;
+    if (prev) container.insertBefore(item, prev);
+  };
+
+  const downBtn = document.createElement("button");
+  downBtn.textContent = "↓";
+  downBtn.onclick = () => {
+    const next = item.nextElementSibling;
+    if (next) container.insertBefore(next, item);
+  };
+
+  // Append elements
+  item.appendChild(checkbox);
+  item.appendChild(span);
+  item.appendChild(upBtn);
+  item.appendChild(downBtn);
+  item.appendChild(deleteBtn);
+  container.appendChild(item);
+
+  input.value = "";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Array Method Practice</title>
+</head>
+<body>
+
+<h2>Check the console for results!</h2>
+
+<script>
+const numbers = [2, 5, 8, 11, 14, 17, 20];
+
+// MAP: double each number
+const doubled = numbers.map(num => num * 2);
+console.log("Doubled:", doubled);
+
+// FILTER: only even numbers
+const evens = numbers.filter(num => num % 2 === 0);
+console.log("Even Numbers:", evens);
+
+// REDUCE: sum all numbers
+const sum = numbers.reduce((total, num) => total + num, 0);
+console.log("Sum:", sum);
+
+// FOREACH: print each number
+console.log("ForEach Output:");
+numbers.forEach((num, index) => {
+  console.log(`Index ${index}: ${num}`);
+});
+</script>
+
+</body>
+</html>

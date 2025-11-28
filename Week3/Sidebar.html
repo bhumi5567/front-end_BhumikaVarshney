@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Responsive Sidebar</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+  }
+
+  .sidebar {
+    width: 250px;
+    background: #1b1b1b;
+    color: white;
+    padding: 20px;
+    height: 100vh;
+  }
+
+  .sidebar a {
+    color: #fff;
+    display: block;
+    margin: 12px 0;
+    text-decoration: none;
+  }
+
+  .content {
+    flex: 1;
+    padding: 20px;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    body {
+      flex-direction: column;
+    }
+
+    .sidebar {
+      width: 100%;
+      height: auto;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <h2>Sidebar Menu</h2>
+  <a href="#">Home</a>
+  <a href="#">Products</a>
+  <a href="#">Blog</a>
+  <a href="#">Contact</a>
+</div>
+
+<div class="content">
+  <h1>Main Content</h1>
+  <p>This is the main content area beside the sidebar.</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Function, Closure & IIFE Practice</title>
+</head>
+<body>
+
+<h2>Open the console to see outputs!</h2>
+
+<script>
+// -------------------------------
+// 1. Function Scope Example
+// -------------------------------
+function scopeTest() {
+  let a = 10;  
+  if (true) {
+    let b = 20;  
+    console.log("Inside block:", a, b);  
+  }
+  console.log("Inside function:", a);  
+}
+scopeTest();
+
+// -------------------------------
+// 2. Closure Example
+// -------------------------------
+// A closure remembers the outer variable even after function returns
+function outer() {
+  let counter = 0;
+  return function inner() {
+    counter++;
+    console.log("Counter:", counter);
+  };
+}
+
+const countUp = outer();
+countUp();
+countUp();
+countUp();
+
+// -------------------------------
+// 3. IIFE Example (Immediately Invoked Function Expression)
+// -------------------------------
+(function () {
+  console.log("IIFE executed immediately!");
+})();
+
+// -------------------------------
+// 4. Interview Question: Loop + closure problem
+// Fixing var inside loop using IIFE
+// -------------------------------
+for (var i = 1; i <= 3; i++) {
+  (function (num) {
+    setTimeout(() => console.log("IIFE Loop Value:", num), num * 500);
+  })(i);
+}
+
+// -------------------------------
+// 5. Interview Question: Using closure to create private variables
+// -------------------------------
+function bankAccount() {
+  let balance = 100;
+
+  return {
+    deposit(amount) {
+      balance += amount;
+      console.log("Deposited:", amount, "New Balance:", balance);
+    },
+    getBalance() {
+      console.log("Current Balance:", balance);
+    }
+  };
+}
+
+const account = bankAccount();
+account.deposit(50);
+account.getBalance();
+
+</script>
+
+</body>
+</html>

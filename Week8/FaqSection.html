@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FAQ with slideToggle</title>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style>
+  body { font-family: Arial; padding: 20px; }
+  .faq-item { margin-bottom: 15px; }
+  .question {
+    background: #0d6efd;
+    color: white;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .answer {
+    display: none;
+    padding: 12px;
+    background: #f1f1f1;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+</style>
+
+</head>
+<body>
+
+<h2>FAQ Section (slideToggle)</h2>
+
+<div class="faq-item">
+  <div class="question">What is jQuery?</div>
+  <div class="answer">jQuery is a fast, small JavaScript library for DOM manipulation.</div>
+</div>
+
+<div class="faq-item">
+  <div class="question">What does slideToggle do?</div>
+  <div class="answer">It shows or hides an element with a sliding motion.</div>
+</div>
+
+<div class="faq-item">
+  <div class="question">Can I learn jQuery easily?</div>
+  <div class="answer">Yes! It's beginner-friendly and widely used.</div>
+</div>
+
+<script>
+$(".question").click(function() {
+  $(this).next(".answer").slideToggle(300);
+});
+</script>
+
+</body>
+</html>
